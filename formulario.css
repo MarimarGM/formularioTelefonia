@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.valoracion {
+    float: left;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+    text-shadow: 1px 1px 2px yellow;
+}
+
+legend {
+    background-color: red;
+    color: white;
+}
+
+fieldset {
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: aqua;
+    border-color: lightgrey;
+    border-style: solid;
+}
+
+.bg-yellow {
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: yellow;
+    border-color: lightgrey;
+}
+
+.bt-valo,
+.bt-cuent,
+.bt-dia {
+    border-radius: 5px;
+    border: none;
+    border-style: outset;
+    background-color: pink;
+    border-width: 2px;
+    width: 98px;
+}
