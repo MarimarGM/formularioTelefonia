@@ -5,6 +5,44 @@
     <meta charset="UTF-8" />
     <title>Formulario</title>
     <link rel="stylesheet" href="formulario.css" type="text/css" />
+    <script>
+        function mostrarValoracion() {
+            debugger
+            const valor = document.getElementById('valoracion').value
+            alert("Has valorado con " + valor + " puntos.")
+        }
+
+        function mostrarCuenta() {
+            debugger
+            const pais = document.getElementById('es').value
+            const iban = document.getElementById('iban').value
+            const entidad = document.getElementById('ent').value
+            const sucursal = document.getElementById('suc').value
+            const dc = document.getElementById('dc').value
+            const cuenta = document.getElementById('cuen').value
+            alert("Le informamos que su cuenta bancaria es: " + pais + iban + "-" + entidad + "-" + sucursal + "-" + dc + "-" + cuenta)
+
+
+        }
+
+        function onlyNumberKey(evt) {
+
+            // Only ASCII charactar in that range allowed 
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+
+        function mostrarDia() {
+            debugger
+            const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            const dia = document.getElementById('day').value
+            const date = new Date(dia);
+            alert("La fecha seleccionada en el elemento de fecha es un " + dias[date.getDay()])
+
+        }
+    </script>
 </head>
 
 <body>
@@ -42,10 +80,10 @@
         <br />
         <fieldset>
             <legend>Datos Bancarios</legend>
-            <label>País:<input class="bg-yellow" type="text" name="pais" value="ES" readonly="readonly" /> (sólo válido ES)</label><br /> <label>Control IBAN:
-            <input class="bg-yellow" type="text" name="ciban" placeholder="XX" pattern="[0-9]{2}" /> (dos dígitos)</label><br /> <label>Entidad: <input class="bg-yellow" type="text" name="enti" placeholder="XXXX" pattern="[0-9]{4}" /> (cuatro dígitos)</label><br
-            /> <label>Sucursal: <input class="bg-yellow" type="text" name="suc" placeholder="XXXX"
-                pattern="[0-9]{4}" /> (cuatro dígitos)</label><br /> <label> DC: <input class="bg-yellow" type="text" name="dc" placeholder="XX" pattern="[0-9]{2}" /> (dos dígitos)</label><br /> <label> Cuenta: <input class="bg-yellow" type="text" name="cuenta" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" /> (diez dígitos)
+            <label>País:<input class="bg-yellow" id= "es" type="text" name="pais" value="ES" readonly="readonly" /> (sólo válido ES)</label><br /> <label>Control IBAN:
+            <input class="bg-yellow" id="iban" onkeypress="return onlyNumberKey(event)" type="text" name="ciban" placeholder="XX" maxlength="2" pattern="[0-9]{2}" /> (dos dígitos)</label><br /> <label>Entidad: <input class="bg-yellow" id= "ent" type="text" name="enti" placeholder="XXXX" pattern="[0-9]{4}" /> (cuatro dígitos)</label><br
+            /> <label>Sucursal: <input class="bg-yellow" id= "suc" type="text" name="suc" placeholder="XXXX"
+                pattern="[0-9]{4}" /> (cuatro dígitos)</label><br /> <label> DC: <input class="bg-yellow" id= "dc" type="text" name="dc" placeholder="XX" pattern="[0-9]{2}" /> (dos dígitos)</label><br /> <label> Cuenta: <input class="bg-yellow" id= "cuen" type="text" name="cuenta" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" /> (diez dígitos)
                 </label><br />
         </fieldset>
         <br />
@@ -67,7 +105,7 @@
             <div style="margin-top: 5px;">
                 <label for="start">Fecha de la Encuesta:</label>
 
-                <input type="date" id="start" name="trip-start" value="2019-01-01">
+                <input type="date" id="day" name="trip-start" value="2019-01-01">
             </div>
 
         </fieldset>
@@ -81,21 +119,6 @@
 
     </form>
 </body>
-<script>
-    function mostrarValoracion() {
-        debugger
-        const valor = document.getElementById('valoracion').value
-        alert(valor)
-    }
 
-    function mostrarCuenta() {
-
-
-    }
-
-    function mostrarDia() {
-
-    }
-</script>
 
 </html>
