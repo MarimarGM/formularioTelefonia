@@ -1,11 +1,9 @@
 function mostrarValoracion() {
-    debugger
     const valor = document.getElementById('valoracion').value
     alert("Has valorado con " + valor + " puntos.")
 }
 
 function mostrarCuenta() {
-    debugger
     const pais = document.getElementById('es').value
     const iban = document.getElementById('iban').value
     const entidad = document.getElementById('ent').value
@@ -27,7 +25,6 @@ function onlyNumberKey(evt) {
 }
 
 function mostrarDia() {
-    debugger
     const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
     const dia = document.getElementById('day').value
     const date = new Date(dia);
